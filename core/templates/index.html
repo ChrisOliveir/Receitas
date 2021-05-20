@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+<body>
+    <h1> Receitas</h1>
+    <img src="{% static 'images/pudim.jpg' %}"/>
+    <h2> {{Receitas}} </h2>
+    <p>{{outro }}</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th> Nome_receitas</th>
+                <th>Ingredientes</th>
+                <th>Modo_preparo</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for receita in receitas %}
+         <tr> 
+            <td>{{ receita.nome_receita }}</td>
+            <td> {{ receita.ingredientes }}</td>
+            <td>{{ receita.modo_preparo }}</td>
+         </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
